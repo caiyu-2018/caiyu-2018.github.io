@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-03T01:00:01.040Z</updated>
+  <updated>2020-10-04T10:59:32.702Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Semantic Instance Segmentation with a Discriminative Loss Function论文笔记</title>
+    <link href="http://example.com/2020/10/04/Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2020/10/04/Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-10-04T10:58:44.000Z</published>
+    <updated>2020-10-04T10:59:32.702Z</updated>
+    
+    
+    
+    
+    <category term="计算机视觉" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="计算机视觉" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
   
   <entry>
     <title>hello</title>
