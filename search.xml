@@ -3,18 +3,16 @@
   <entry>
     <title>Semantic Instance Segmentation with a Discriminative Loss Function论文笔记</title>
     <url>/2020/10/04/Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>​        本文主要提出了一种新的实例分割方法，通过神经网络将每个像素映射到特征空间中的一个点，再用聚类的方式将这些点划分给不同的实例。与原有的方法相比，本方法没有使用先找出候选目标、RNN机制等方法，更加简单，且实现了不错的结果。</p>
+    <content><![CDATA[<p>本文主要提出了一种新的实例分割方法，通过神经网络将每个像素映射到特征空间中的一个点，再用聚类的方式将这些点划分给不同的实例。与原有的方法相比，本方法没有使用先找出候选目标、RNN机制等方法，更加简单，且实现了不错的结果。</p>
 <h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p>为了达到聚类正确的目的，本文提出的损失函数包括以下3项：</p>
 <ul>
 <li><strong>variance term:</strong> 将属于同一个实例的像素对应的embedding拉向这个实例的聚类中心</li>
 <li><strong>distance term:</strong>  增大不同簇的中心的距离</li>
 <li><strong>regularization term:</strong> 让所有的簇有靠近原点的趋势</li>
 </ul>
-<img src="Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function论文笔记\image-20201004202408378.png" alt="损失函数训练趋势" style="zoom:80%;" />
-
+<p><img src="/Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%5Cimage-20201004202408378.png" alt="训练趋势"></p>
 <p>最终的表达式如下所示：</p>
-<img src="Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function论文笔记\image-20201004194905556.png" alt="损失函数" style="zoom:80%;" />
-
+<p><img src="/Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%5Cimage-20201004194905556.png" alt="损失函数"></p>
 <p>其中</p>
 <p>$C$: GT中簇的个数（即实例的个数）</p>
 <p>$N_c$: 簇c中元素的个数（即属于某个实例的像素点个数）</p>
@@ -47,11 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hello</title>
-    <url>/2020/10/03/hello/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/10/02/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -68,5 +61,10 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hello</title>
+    <url>/2020/10/03/hello/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
