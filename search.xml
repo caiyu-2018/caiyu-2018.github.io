@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Semantic Instance Segmentation with a Discriminative Loss Function论文笔记</title>
+    <title>Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function论文笔记</title>
     <url>/2020/10/04/Semantic-Instance-Segmentation-with-a-Discriminative-Loss-Function%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>本文主要提出了一种新的实例分割方法，通过神经网络将每个像素映射到特征空间中的一个点，再用聚类的方式将这些点划分给不同的实例。与原有的方法相比，本方法没有使用先找出候选目标、RNN机制等方法，更加简单，且实现了不错的结果。</p>
 <h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p>为了达到聚类正确的目的，本文提出的损失函数包括以下3项：</p>
