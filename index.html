@@ -198,12 +198,12 @@
 <li>同一实例的所有embedding到其聚类中心的距离小于等于$\delta_v$</li>
 <li>不同实例的聚类中心的距离大于等于$2\delta_d$</li>
 </ul>
-<p>则当$\delta_d&gt;\delta_v$时，每个embedding均落在距离其聚类中心不超过阈值$b=\delta_v$的范围（超球面）内，即：<br>$$<br>x_i \in C \Leftrightarrow ||x_i-x_c&lt;b||<br>$$<br>到簇C的聚类中心$x_c$距离小于阈值$b=\delta_v$的embedding $x_i$，一定属于簇C。</p>
+<p>则当$\delta_d&gt;\delta_v$时，每个embedding均落在距离其聚类中心不超过阈值$b=\delta_v$的范围（超球面）内，即：<br>$$<br>x_i \in C \Leftrightarrow ||x_i-x_c||&lt;b<br>$$<br>到簇C的聚类中心$x_c$距离小于阈值$b=\delta_v$的embedding $x_i$，一定属于簇C。</p>
 <p><strong>但是对于实例分割而言</strong>，每张图片实例的个数是不确定的，因此不能简单的记录聚类中心和阈值用于推理。于是作者采用了新的策略。</p>
 <p>为便于表述，用$D$表示类间点距离，$d$表示类内点距离。对于embedding得到的点，可以发现，<strong>当$\delta_d&gt;2\delta_v$时</strong>，最小类间距离为$D_{min}=2\delta_d-2\delta_v&gt;2\delta_v=d_{max}$（同一实例簇的直径为$2\delta_v$，即为类内最大距离），即$D_{min}&gt;d_{max}$。故此时任选一个点，它到所有同实例点的距离，比到所有不同实例点的距离都要近。</p>
 <p>在此情况下，理想状态时，在推理中任取阈值b满足$d_{max}\leq b &lt; D_{min}$ ，任选一个未分类的点，以b为半径做超球面，在此范围内的点都属于同一实例。重复此过程直到确定所有点的归属即可完成聚类。</p>
 <p><strong>为了增加鲁棒性</strong>，在推理时采用<strong>mean-shift算法</strong>而不是直接对每个点作超球面划分实例。该算法流程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(存在未分类的点)：</span><br><span class="line">	任取一个未分类的点p;</span><br><span class="line">    center = p;</span><br><span class="line">    Do:</span><br><span class="line">        <span class="number">1.</span> 取以center为圆心，半径为b的超球面内所有点构成点集C</span><br><span class="line">        <span class="number">2.</span> 计算C中所有点的中心mean</span><br><span class="line">        <span class="number">3.</span> 若center==mean，点集C划分为一个实例,<span class="keyword">continue</span>; 否则，center=mean, go to <span class="number">1.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 存在未分类的点：</span><br><span class="line">	任取一个未分类的点p;</span><br><span class="line">    center = p;</span><br><span class="line">    Do:</span><br><span class="line">        <span class="number">1.</span> 取以center为圆心，半径为b的超球面内所有点构成点集C</span><br><span class="line">        <span class="number">2.</span> 计算C中所有点的中心mean</span><br><span class="line">        <span class="number">3.</span> 若center==mean，点集C划分为一个实例,<span class="keyword">continue</span>; 否则，center=mean, go to <span class="number">1.</span></span><br></pre></td></tr></table></figure>
 
 
 
